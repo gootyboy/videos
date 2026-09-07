@@ -21,7 +21,7 @@ class CreatorsScene(Scene):
         self.play(FadeOut(text1, text2, text3))
         self.wait(3)
 
-        github_text = Text(r"github.com/gootyboy/videos/diamond_video")
+        github_text = Text(r"github.com/gootyboy/videos/diamond_square_algorithm").scale(0.9)
         thanks_text = Paragraph("Thanks for", "watching!", alignment="center").scale_to_fit_width(config.frame_width).scale(0.75)
 
         self.play(Write(github_text))
