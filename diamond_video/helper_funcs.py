@@ -1,5 +1,6 @@
 import numpy as np
 import random
+from manim import *
 
 def darken_image(mobject):
     copy = mobject.copy()
@@ -148,3 +149,18 @@ def diamond_square(n, roughness, tl, tr, bl, br):
         scale *= roughness
         
     return [float(round(item, 2)) for row in grid for item in row]
+
+def get_code(string):
+    return Code(
+        code_string=string,
+        language="python",
+        background="window",
+        tab_width=4,
+        add_line_numbers=True,
+        formatter_style="monokai",
+        background_config={ 
+            "stroke_color": BLUE,
+            "stroke_width": 2,
+            "fill_opacity": 0.8
+        }
+    )

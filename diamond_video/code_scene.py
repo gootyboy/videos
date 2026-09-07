@@ -1,20 +1,5 @@
 from manim import *
-import random
-
-def get_code(string):
-    return Code(
-        code_string=string,
-        language="python",
-        background="window",
-        tab_width=4,
-        add_line_numbers=True,
-        formatter_style="monokai",
-        background_config={ 
-            "stroke_color": BLUE,
-            "stroke_width": 2,
-            "fill_opacity": 0.8
-        }
-    )
+from helper_funcs import *
 
 class CodeScene(MovingCameraScene):
     def construct(self):
