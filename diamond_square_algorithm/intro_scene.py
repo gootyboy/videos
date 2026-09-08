@@ -2,6 +2,15 @@ from manim import *
 from helper_funcs import *
 from video_mobject import VideoMobject
 
+def run_scene(scene, low_q = True):
+    if low_q:
+        temp_config = {"preview": True, "quality": "low_quality", "disable-caching": False}
+    else:
+        temp_config = {"preview": True, "quality": "fourk_quality", "disable-caching": True}
+
+    with tempconfig(temp_config):
+        scene.render()
+
 class IntroScene(Scene):
     def construct(self):
         self.camera.background_color = DARKER_GRAY
@@ -88,6 +97,6 @@ class IntroScene(Scene):
         self.wait(10)
         self.play(FadeOut(height_func, htc_func))
 
-with tempconfig({"preview": True, "quality": "fourk_quality"}):
+with tempconfig({"preview": True, "quality": "fourk_quality", "disable-caching": True}):
     scene = IntroScene()
     scene.render()
